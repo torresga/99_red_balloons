@@ -3,12 +3,9 @@ class Player
 
 	def initialize(window)
 		@image = Gosu::Image.new(window, "zeppelin_game.png", false)
-		@x = @y = @vel_x = @vel_y = @angle = 0.0
+		@x = @y = 200
+		@vel_x = @vel_y = @angle = 0.0
 		@count = 0
-	end
-
-	def warp(x, y)
-		@x, @y = x, y
 	end
 
 	def accelerate_up

@@ -5,17 +5,19 @@ load 'player.rb'
 load 'balloon.rb'
 
 class Window < Gosu::Window
+
 	def initialize
 		super(640, 480, false)
 		self.caption = "99 Red Balloons"
 
-		@background_image = Gosu::Image.new(self, "sky.jpg", true)
+		@background_image = Gosu::Image.new(self, "background.jpg", true)
 		@player = Player.new(self)
 		@balloons = Array.new
-		@font = Gosu::Font.new(self, Gosu::default_font_name, 20)
+		@font = Gosu::Font.new(self, Gosu::default_font_name, 50)
 	end
 
 	def update
+
 		# THIS CONTAINS MAIN GAME LOGIC
 		if button_down? Gosu::KbLeft
 			@player.accelerate_left
@@ -35,18 +37,18 @@ class Window < Gosu::Window
 			@balloons << Balloon.new(self)
 		end
 
-
-		if @player.count >= 99
-			@font.draw("YOU WIN", 100, 100, 1.0, 1.0, 1.0, 0xffffff00)
-		end
-
 	end
 
 	def draw
 		@background_image.draw(0, 0, 0)
 		@player.draw
 		@balloons.each { |balloon| balloon.draw }
+		@font.draw("#{Gosu::milliseconds/1000}", 320, 10, 1.0, 1.0, 1.0, 0xffffff00)
 		@font.draw("Score: #{@player.count}", 10, 10, 1.0, 1.0, 1.0, 0xffffff00)
+
+		if @player.count == 99
+			@font.draw("YOU WIN", 260, 240, 1.0, 1.0, 1.0, 0xffffff00)
+		end
 	end
 
 end
