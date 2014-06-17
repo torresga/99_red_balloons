@@ -2,7 +2,7 @@ class Player
 	attr_accessor :x, :y
 
 	def initialize(window)
-		@image = Gosu::Image.new(window, "zeppelin_game.png", false)
+		@image = Gosu::Image.new(window, "zeppelin.png", false)
 		@x = @y = 200
 		@vel_x = @vel_y = @angle = 0.0
 		@count = 0
