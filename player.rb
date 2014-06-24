@@ -49,7 +49,7 @@ class Player
 
 	def collect_balloons(balloons)
 		balloons.reject! do |balloon|
-			if Gosu::distance(balloon.x, balloon.y, @x, @y) < 35 then
+			if Gosu::distance(balloon.x, balloon.y, @x, @y) < 35 and @count < 99 then
 				@count += 1
 			end
 		end  

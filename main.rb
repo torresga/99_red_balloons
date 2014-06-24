@@ -31,6 +31,7 @@ class Window < Gosu::Window
 
 		@player.move
 
+
 		@player.collect_balloons(@balloons)
 
 		if @balloons.length < 25
@@ -46,9 +47,14 @@ class Window < Gosu::Window
 		@font.draw("#{Gosu::milliseconds/1000}", 320, 10, 1.0, 1.0, 1.0, 0xffffff00)
 		@font.draw("Score: #{@player.count}", 10, 10, 1.0, 1.0, 1.0, 0xffffff00)
 
-		if @player.count == 99
+		if @player.count >= 99
 			@font.draw("YOU WIN", 260, 240, 1.0, 1.0, 1.0, 0xffffff00)
 		end
+
+		if Gosu::milliseconds/1000 >= 60 and @player.count < 99
+			@font.draw("GAME OVER", 260, 240, 1.0, 1.0, 1.0, 0xffffff00)
+		end
+
 	end
 
 end
