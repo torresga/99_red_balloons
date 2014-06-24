@@ -16,4 +16,4 @@ DONE
 
 - After 60 seconds, if player has not caught 99 balloons, they lose.
 - If player catches 99 balloons they win. Any balloons they catch after they win should not reflect in the counter
-- After player wins or 60 seconds pass, game functionality should stop.
+
