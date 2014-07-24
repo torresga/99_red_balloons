@@ -14,10 +14,12 @@ class Window < Gosu::Window
 		@player = Player.new(self)
 		@balloons = Array.new
 		@font = Gosu::Font.new(self, Gosu::default_font_name, 50)
+		@song = Gosu::Song.new(self, "99_balloons.wav")
 	end
 
 	def update
-
+		
+		@song.play
 		# THIS CONTAINS MAIN GAME LOGIC
 		if button_down? Gosu::KbLeft
 			@player.accelerate_left
