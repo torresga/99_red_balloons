@@ -10,9 +10,11 @@ TODO
 
 - Balloons need to disappear after 10 seconds if they are not caught.
 
+I think in order to do this I need to make an animation. Like, actually change the image so there are two states. That should be the easiest way to make it look like they move.
 
-DONE
+- Play a clip of 99 red balloons.
+ 
+- flip the counters. instead of 1, start from 60.
 
-- After 60 seconds, if player has not caught 99 balloons, they lose.
-- If player catches 99 balloons they win. Any balloons they catch after they win should not reflect in the counter
-- Play 99 red balloons. Because Nena is awesome. 
+- make the text different colors, make it more centered.
+

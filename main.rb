@@ -11,15 +11,17 @@ class Window < Gosu::Window
 		self.caption = "99 Red Balloons"
 
 		@background_image = Gosu::Image.new(self, "background.jpg", true)
+		
 		@player = Player.new(self)
+
 		@balloons = Array.new
 		@font = Gosu::Font.new(self, Gosu::default_font_name, 50)
-		@song = Gosu::Song.new(self, "99_balloons.wav")
+		#@song = Gosu::Song.new(self, "99_balloons.wav")
 	end
 
 	def update
 		
-		@song.play
+		#@song.play
 		# THIS CONTAINS MAIN GAME LOGIC
 		if button_down? Gosu::KbLeft
 			@player.accelerate_left
@@ -33,7 +35,6 @@ class Window < Gosu::Window
 
 		@player.move
 
-
 		@player.collect_balloons(@balloons)
 
 		if @balloons.length < 25
@@ -45,7 +46,7 @@ class Window < Gosu::Window
 	def draw
 		@background_image.draw(0, 0, 0)
 		@player.draw
-		@balloons.each { |balloon| balloon.draw }
+		@balloons.each  { |balloon| balloon.draw }
 		@font.draw("#{Gosu::milliseconds/1000}", 320, 10, 1.0, 1.0, 1.0, 0xffffff00)
 		@font.draw("Score: #{@player.count}", 10, 10, 1.0, 1.0, 1.0, 0xffffff00)
 

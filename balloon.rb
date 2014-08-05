@@ -8,12 +8,6 @@ class Balloon
 	end
 
 	def draw
-		@image.draw(@x, @y, 1, 1)
+		@image.draw(@x, @y, 1, 1, 1)
 	end
-
-	def move
-		@x = rand * 640
-		@y = rand * 480
-	end
-
 end
