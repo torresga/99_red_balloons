@@ -41,6 +41,10 @@ class Window < Gosu::Window
 			@balloons << Balloon.new(self)
 		end
 
+		if Gosu::milliseconds / 10 % 10 == 0
+			@balloons.pop(rand(@balloons.size))
+		end
+
 	end
 
 	def draw
